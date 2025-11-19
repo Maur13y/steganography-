@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steganography Tool | Secure Message Encoding</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="matrix-bg" id="matrixBg"></div>
+    
+    <div class="container">
+        <header>
+            <h1>STEGANOGRAPHY TOOL</h1>
+            <p class="subtitle">Hide and Reveal Secret Messages in Images</p>
+        </header>
+        
+        <div class="tabs">
+            <button class="tab active" data-tab="encode">Encode Message</button>
+            <button class="tab" data-tab="decode">Decode Message</button>
+        </div>
+        
+        <div id="encode" class="tab-content active">
+            <div class="input-group">
+                <label for="encodeimage1">Select Image:</label>
+                <div class="file-input-wrapper">
+                    <input type="file" id="encodeimage1" class="file-input" accept="image/*">
+                    <div class="file-input-label" id="encodeImageLabel">Choose an image file</div>
+                </div>
+            </div>
+            
+            <div class="input-group">
+                <label for="secretText">Secret Message:</label>
+                <textarea id="secretText" placeholder="Enter your secret message here..."></textarea>
+            </div>
+            
+            <button id="encodebtn" class="btn">Encode Message</button>
+            
+            <div class="canvas-container">
+                <div id="canvasbox"></div>
+            </div>
+            
+            <div class="status" id="encodeStatus"></div>
+            
+            <div class="instructions">
+                <h3>Encoding Instructions:</h3>
+                <p>1. Select an image to hide your message in</p>
+                <p>2. Enter your secret message in the text area</p>
+                <p>3. Click "Encode Message" to process the image</p>
+                <p>4. The encoded image will be downloaded automatically</p>
+            </div>
+        </div>
+        
+        <div id="decode" class="tab-content">
+            <div class="input-group">
+                <label for="decodeimage1">Original Image:</label>
+                <div class="file-input-wrapper">
+                    <input type="file" id="decodeimage1" class="file-input" accept="image/*">
+                    <div class="file-input-label" id="decodeImage1Label">Choose the original image</div>
+                </div>
+            </div>
+            
+            <div class="input-group">
+                <label for="decodeimage2">Encoded Image:</label>
+                <div class="file-input-wrapper">
+                    <input type="file" id="decodeimage2" class="file-input" accept="image/*">
+                    <div class="file-input-label" id="decodeImage2Label">Choose the encoded image</div>
+                </div>
+            </div>
+            
+            <button id="decodebtn" class="btn">Decode Message</button>
+            
+            <div class="input-group">
+                <label for="decodedText">Decoded Message:</label>
+                <textarea id="decodedText" readonly placeholder="Decoded message will appear here..."></textarea>
+            </div>
+            
+            <div class="status" id="decodeStatus"></div>
+            
+            <div class="instructions">
+                <h3>Decoding Instructions:</h3>
+                <p>1. Select the original image (without message)</p>
+                <p>2. Select the encoded image (with hidden message)</p>
+                <p>3. Click "Decode Message" to extract the hidden message</p>
+                <p>4. The decoded message will appear in the text area</p>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Steganography Tool &copy; 2025 (Gaurav) | Secure your communications</p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
